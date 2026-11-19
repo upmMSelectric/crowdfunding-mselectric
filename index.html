@@ -73,23 +73,27 @@
                 
                 <div class="catalogo-grid">
                     <!-- 1. Camiseta -->
-                    <article class="producto-card">
-                        <div class="producto-img">[Foto Camiseta]</div>
+                    <article class="producto-card" data-description="Camiseta oficial de algodón del equipo MotoStudent UPM Electric con el logo en el pecho y diseño racing en la espalda.">
+                        <div class="producto-img">
+                            <img src="images/Camiseta algodón.jpeg" alt="Camiseta oficial">
+                        </div>
                         <h3>Camiseta Oficial</h3>
                         <p class="precio">15€</p>
                         <button class="btn-añadir">Añadir al carrito</button>
                     </article>
 
                     <!-- 2. Sudadera -->
-                    <article class="producto-card">
-                        <div class="producto-img">[Foto Sudadera]</div>
+                    <article class="producto-card" data-description="Sudadera con capucha y bolsillo canguro. Tejido grueso de alta calidad con el diseño oficial de la temporada.">
+                        <div class="producto-img">
+                            <img src="images/SUDADERA BLANCA.png" alt="Sudadera">
+                        </div>
                         <h3>Sudadera Racing</h3>
                         <p class="precio">30€</p>
                         <button class="btn-añadir">Añadir al carrito</button>
                     </article>
 
                     <!-- 3. Remove Before Flight -->
-                    <article class="producto-card">
+                    <article class="producto-card" data-description="Llavero bordado de doble cara estilo aviación/competición con el lema Remove Before Flight y el logo de MotoStudent UPM.">
                         <div class="producto-img">[Foto Llavero]</div>
                         <h3>Llavero "Remove Before Flight"</h3>
                         <p class="precio">5€</p>
@@ -97,7 +101,7 @@
                     </article>
 
                     <!-- 4. Gorras -->
-                    <article class="producto-card">
+                    <article class="producto-card" data-description="Gorra ajustable negra con el emblema del equipo bordado en el frontal.">
                         <div class="producto-img">[Foto Gorra]</div>
                         <h3>Gorra Team</h3>
                         <p class="precio">12€</p>
@@ -105,7 +109,7 @@
                     </article>
 
                     <!-- 5. Pegatinas -->
-                    <article class="producto-card">
+                    <article class="producto-card" data-description="Pack de pegatinas de vinilo resistente al agua para portátil, casco o carpeta.">
                         <div class="producto-img">[Foto Pegatinas]</div>
                         <h3>Pack Pegatinas</h3>
                         <p class="precio">3€</p>
@@ -113,7 +117,7 @@
                     </article>
 
                     <!-- 6. Parches -->
-                    <article class="producto-card">
+                    <article class="producto-card" data-description="Parche bordado termoadhesivo oficial del equipo, ideal para chaquetas o mochilas.">
                         <div class="producto-img">[Foto Parche]</div>
                         <h3>Parche Bordado</h3>
                         <p class="precio">6€</p>
@@ -121,7 +125,7 @@
                     </article>
 
                     <!-- 7. Pulseras -->
-                    <article class="producto-card">
+                    <article class="producto-card" data-description="Pulsera de silicona con los colores del equipo MotoStudent UPM Electric.">
                         <div class="producto-img">[Foto Pulsera]</div>
                         <h3>Pulsera Silicona</h3>
                         <p class="precio">2€</p>
@@ -129,7 +133,7 @@
                     </article>
 
                     <!-- 8. Mochilas de cuerdas -->
-                    <article class="producto-card">
+                    <article class="producto-card" data-description="Mochila ligera de cuerdas con serigrafía oficial del equipo, perfecta para el día a día en la universidad.">
                         <div class="producto-img">[Foto Mochila]</div>
                         <h3>Mochila de Cuerdas</h3>
                         <p class="precio">8€</p>
@@ -137,7 +141,7 @@
                     </article>
 
                     <!-- 9. Bomber -->
-                    <article class="producto-card">
+                    <article class="producto-card" data-description="Chaqueta estilo bomber oficial del equipo. Cortavientos, forro interior ligero y logo bordado.">
                         <div class="producto-img">[Foto Bomber]</div>
                         <h3>Chaqueta Bomber</h3>
                         <p class="precio">50€</p>
@@ -145,7 +149,7 @@
                     </article>
 
                     <!-- 10. Pack 1 -->
-                    <article class="producto-card pack-destacado">
+                    <article class="producto-card pack-destacado" data-description="Incluye: Camiseta Oficial + Llavero Remove Before Flight + Pack de Pegatinas.">
                         <div class="producto-img">[Foto Pack 1]</div>
                         <h3>Pack Básico</h3>
                         <p class="precio">20€</p>
@@ -153,7 +157,7 @@
                     </article>
 
                     <!-- 11. Pack 2 -->
-                    <article class="producto-card pack-destacado">
+                    <article class="producto-card pack-destacado" data-description="Incluye: Sudadera Racing + Camiseta Oficial + Pulsera de Silicona + Pack de Pegatinas.">
                         <div class="producto-img">[Foto Pack 2]</div>
                         <h3>Pack Supporter</h3>
                         <p class="precio">45€</p>
@@ -161,7 +165,7 @@
                     </article>
 
                     <!-- 12. Pack 3 -->
-                    <article class="producto-card pack-destacado">
+                    <article class="producto-card pack-destacado" data-description="El pack definitivo: Chaqueta Bomber + Sudadera Racing + Gorra Team + Llavero + Pack de Pegatinas.">
                         <div class="producto-img">[Foto Pack 3]</div>
                         <h3>Pack Premium</h3>
                         <p class="precio">75€</p>
@@ -207,6 +211,28 @@
         </aside>
 
         </div>
+        
+        <!--=========================================
+            MODAL DE DETALLE DE PRODUCTO
+            ========================================= -->
+            <div id="product-modal-overlay" class="product-modal-overlay">
+                <div class="product-modal">
+                    <button id="close-product-modal" class="modal-close" aria-label="Cerrar">&times;</button>
+                    
+                    <div class="modal-body">
+                        <div class="modal-img-container">
+                            <img id="modal-img" src="" alt="Producto MotoStudent UPM">
+                        </div>
+                        
+                        <div class="modal-info">
+                            <h3 id="modal-title">Nombre del producto</h3>
+                            <p id="modal-price" class="modal-price">0€</p>
+                            <p id="modal-desc" class="modal-desc">Descripción del producto...</p>
+                            <button id="modal-add-btn" class="btn-añadir modal-add-btn">Añadir al carrito</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         <!--=========================================
             PANTALLA DE ÉXITO (Oculta por defecto)
@@ -230,4 +256,5 @@
         <!-- Script principal -->
         <script src="script.js"></script>
     </body>
+
 </html>

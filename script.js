@@ -14,7 +14,7 @@
    const cartItemsContainer = document.getElementById('cart-items');
    const cartTotalPrice = document.getElementById('cart-total-price');
    const checkoutForm = document.getElementById('checkout-form');
-   const addButtons = document.querySelectorAll('.btn-añadir');
+   const addButtons = document.querySelectorAll('.producto-card .btn-añadir');
    
    // 2. Referencias para la pantalla de éxito
    const mainContent = document.getElementById('main-content');
@@ -207,4 +207,76 @@ const webPrincipal = document.querySelectorAll('header, main, section');
        link.addEventListener('click', () => {
            navMenu.classList.remove('active');
        });
+   });
+/* =========================================
+   6. MODAL DE DETALLE DE PRODUCTO
+   ========================================= */
+   const productModalOverlay = document.getElementById('product-modal-overlay');
+   const closeProductModalBtn = document.getElementById('close-product-modal');
+   const modalImg = document.getElementById('modal-img');
+   const modalTitle = document.getElementById('modal-title');
+   const modalPrice = document.getElementById('modal-price');
+   const modalDesc = document.getElementById('modal-desc');
+   const modalAddBtn = document.getElementById('modal-add-btn');
+   
+   let activeCardAddBtn = null;
+   
+   // Hacemos que cada tarjeta abra el modal al hacer clic en ella
+   addButtons.forEach(btn => {
+       const card = btn.closest('.producto-card');
+       card.style.cursor = 'pointer';
+   
+       card.addEventListener('click', (e) => {
+           // Si se pulsa directamente en "Añadir al carrito", no abrimos el modal
+           if (e.target.closest('.btn-añadir')) return;
+   
+           const img = card.querySelector('.producto-img img');
+           const title = card.querySelector('h3').innerText;
+           const price = card.querySelector('.precio').innerText;
+           const description = card.dataset.description || 'Artículo oficial del crowdfunding de MotoStudent UPM Electric.';
+   
+           // Si ya hay una etiqueta <img> real la mostramos; si no, ocultamos el hueco de foto
+           if (img) {
+               modalImg.src = img.src;
+               modalImg.alt = title;
+               modalImg.parentElement.style.display = 'flex';
+           } else {
+               modalImg.parentElement.style.display = 'none';
+           }
+   
+           modalTitle.innerText = title;
+           modalPrice.innerText = price;
+           modalDesc.innerText = description;
+   
+           activeCardAddBtn = btn;
+           productModalOverlay.classList.add('active');
+       });
+   });
+   
+   function closeProductModal() {
+       productModalOverlay.classList.remove('active');
+       activeCardAddBtn = null;
+   }
+   
+   // Al pulsar "Añadir al carrito" dentro del modal, dispara el botón original de esa tarjeta
+   modalAddBtn.addEventListener('click', () => {
+       if (activeCardAddBtn) {
+           activeCardAddBtn.click();
+       }
+       closeProductModal();
+   });
+   
+   // Cerrar con la X, clic fuera del cuadro o tecla Escape
+   closeProductModalBtn.addEventListener('click', closeProductModal);
+   
+   productModalOverlay.addEventListener('click', (e) => {
+       if (e.target === productModalOverlay) {
+           closeProductModal();
+       }
+   });
+   
+   document.addEventListener('keydown', (e) => {
+       if (e.key === 'Escape' && productModalOverlay.classList.contains('active')) {
+           closeProductModal();
+       }
    });
