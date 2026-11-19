@@ -1,11 +1,12 @@
 /* =========================================
    ESTADO DE LA APLICACIÓN
    ========================================= */
-   let cart = []; // Aquí guardaremos los productos que el usuario añada
+   let cart = [];
 
    /* =========================================
       REFERENCIAS AL DOM (Elementos de la web)
       ========================================= */
+   // 1. Referencias del carrito y botones
    const cartBtn = document.getElementById('open-cart');
    const closeCartBtn = document.getElementById('close-cart');
    const cartSidebar = document.getElementById('cart-sidebar');
@@ -13,11 +14,16 @@
    const cartItemsContainer = document.getElementById('cart-items');
    const cartTotalPrice = document.getElementById('cart-total-price');
    const checkoutForm = document.getElementById('checkout-form');
-   const addButtons = document.querySelectorAll('.btn-añadir'); // Selecciona todos los botones de las tarjetas
-   const successModal = document.getElementById('success-modal');
-  const successNameMsg = document.getElementById('success-name-msg');
-  const successOrderCode = document.getElementById('success-order-code');
-  const btnVolver = document.getElementById('btn-volver');
+   const addButtons = document.querySelectorAll('.btn-añadir');
+   
+   // 2. Referencias para la pantalla de éxito
+   const mainContent = document.getElementById('main-content');
+   const pantallaExito = document.getElementById('pantalla-exito');
+   const successNameMsg = document.getElementById('success-name-msg');
+   const successOrderCode = document.getElementById('success-order-code');
+   const btnVolver = document.getElementById('btn-volver');
+// Seleccionamos todas las secciones de tu web original para poder ocultarlas de golpe
+const webPrincipal = document.querySelectorAll('header, main, section');
    
    /* =========================================
       1. LÓGICA DE LA INTERFAZ DEL CARRITO
@@ -77,9 +83,9 @@
        updateCartUI();
    };
    
-   /* =========================================
+   /* ===========================================
       3. ACTUALIZAR LA PANTALLA (RENDERIZADO)
-      ========================================= */
+      =========================================== */
    function updateCartUI() {
        // 3.1 Actualizar contador del botón de la cabecera
        const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
@@ -110,41 +116,95 @@
        cartTotalPrice.innerText = total + '€';
    }
    
-   /* =========================================
-   4. PROCESAR EL PEDIDO (CHECKOUT)
+/* ==================================================
+   4. PROCESAR EL PEDIDO (CHECKOUT + GOOGLE SHEETS)
    ========================================= */
-checkoutForm.addEventListener('submit', (e) => {
-  e.preventDefault(); 
-  
-  if (cart.length === 0) {
-      alert("El carrito está vacío. Añade productos antes de confirmar el pedido.");
-      return;
-  }
+   const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzKKo0lQngpx8Sv0uKEN9zn2Lv68Eggvb_poIINJOwcgLV-dfTvPLHdtGmZWqC6JnMN/exec';
 
-  const name = document.getElementById('user-name').value;
-  const email = document.getElementById('user-email').value;
-  const phone = document.getElementById('user-phone').value;
+   checkoutForm.addEventListener('submit', async (e) => {
+       e.preventDefault(); 
+       
+       if (cart.length === 0) {
+           alert("El carrito está vacío.");
+           return;
+       }
+   
+       // Bloqueamos el botón mientras se envía para evitar pedidos duplicados
+       const submitBtn = checkoutForm.querySelector('.btn-submit');
+       const originalBtnText = submitBtn.innerText;
+       submitBtn.disabled = true;
+       submitBtn.innerText = 'REGISTRANDO PEDIDO...';
+   
+       // Recogemos los datos del formulario y calculamos el resumen
+       const name = document.getElementById('user-name').value;
+       const surname = document.getElementById('user-surnames').value;
+       const email = document.getElementById('user-email').value;
+       const phone = document.getElementById('user-phone').value;
+       
+       const itemsSummary = cart.map(item => `${item.quantity}x ${item.name}`).join(', ');
+       const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
 
-  const orderCode = 'UPM-' + Math.floor(1000 + Math.random() * 9000);
+       const orderData = { name, surname, email, phone, itemsSummary, total };
+    
+       try {
+           // Enviamos los datos a Google Apps Script
+           const response = await fetch(SCRIPT_URL, {
+               method: 'POST',
+               headers: {
+                   'Content-Type': 'text/plain;charset=utf-8'
+               },
+               body: JSON.stringify(orderData)
+           });
+   
+           if (!response.ok) throw new Error('Error en la respuesta del servidor');
+           const result = await response.json();
+           
+           if (result.status !== 'success') throw new Error(result.message);
 
-  // === AQUÍ IRA LA CONEXIÓN CON GOOGLE SHEETS EN EL PRÓXIMO PASO ===
-  console.log("Datos listos para enviar:", { orderCode, name, email, phone, cart });
-  
-  // Inyectar datos en la pantalla de éxito
-  successNameMsg.innerText = `¡Gracias por tu apoyo, ${name}!`;
-  successOrderCode.innerText = orderCode;
-  
-  // Mostrar la pantalla de éxito
-  successModal.classList.add('active');
-  
-  // Resetear el carrito en segundo plano
-  cart = [];
-  updateCartUI();
-  checkoutForm.reset();
-  closeCart(); // Cerramos el carrito lateral por debajo
-});
+            // Mostramos el código real asignado por Google Sheets
+            successNameMsg.innerText = `¡Gracias por tu apoyo, ${name}!`;
+            successOrderCode.innerText = result.orderCode;
+           
+           mainContent.style.display = 'none';
+           pantallaExito.style.display = 'flex';
+           window.scrollTo(0, 0);
+           
+           // Reseteamos el carrito
+           cart = [];
+           updateCartUI();
+           checkoutForm.reset();
+           closeCart();
+   
+       } catch (error) {
+           console.error('Error al enviar el pedido:', error);
+           alert('Hubo un problema al registrar tu pedido. Por favor, inténtalo de nuevo.');
+       } finally {
+           // Restauramos el botón pase lo que pase
+           submitBtn.disabled = false;
+           submitBtn.innerText = originalBtnText;
+       }
+   });
 
-// Función para el botón "Volver a la página principal"
-btnVolver.addEventListener('click', () => {
-  successModal.classList.remove('active');
-});
+   // Botón para volver a la página principal
+    btnVolver.addEventListener('click', () => {
+        pantallaExito.style.display = 'none';
+        mainContent.style.display = 'block';
+        window.scrollTo(0, 0);
+    });
+    
+/* =========================================
+   5. MENÚ HAMBURGUESA (MÓVIL)
+   ========================================= */
+   const menuToggle = document.getElementById('menu-toggle');
+   const navMenu = document.getElementById('nav-menu');
+   const navLinks = document.querySelectorAll('#nav-menu a');
+   
+   menuToggle.addEventListener('click', () => {
+       navMenu.classList.toggle('active');
+   });
+   
+   navLinks.forEach(link => {
+       link.addEventListener('click', () => {
+           navMenu.classList.remove('active');
+       });
+   });

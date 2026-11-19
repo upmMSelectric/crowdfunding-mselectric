@@ -1,223 +1,233 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crowdfunding MotoStudent UPM Electric</title>
-    <!-- Importamos una fuente moderna y limpia tipo sans-serif -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap" rel="stylesheet">
-    
-    <!-- Vinculamos nuestro archivo de estilos externo -->
-    <link rel="stylesheet" href="styles.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Crowdfunding MotoStudent UPM Electric</title>
+        <!-- Importamos una fuente moderna y limpia tipo sans-serif -->
+        <link href="https://script.google.com/macros/library/d/1g3gkRLsms99O2Xbx3IpbZovWKDSvRWdsC8fcvU3MV7esDfYR1dHbLMl4/2">
+        
+        <!-- Vinculamos nuestro archivo de estilos externo -->
+        <link rel="stylesheet" href="styles.css">
+    </head>
 
-<body>
+    <body>
+        <div id="main-content">
+                <!-- CABECERA Y NAVEGACIÓN -->
+                <header>
+                    <div class="logo"><span>UPM</span> MotoStudent Electric</div>
+                    <nav id="nav-menu">
+                        <ul>
+                            <li><a href="#sobre-nosotros">Sobre Nosotros</a></li>
+                            <li><a href="#como-funciona">Cómo Funciona</a></li>
+                            <li><a href="#catalogo">Catálogo</a></li>
+                        </ul>
+                    </nav>
+            
+                    <div class="header-actions">
+                        <button class="cart-btn" id="open-cart">
+                            CARRITO (0) ↗
+                        </button>
+                        <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                    </div>
+                </header>
 
-    <!-- CABECERA Y NAVEGACIÓN -->
-    <header>
-        <div class="logo"><span>UPM</span> MotoStudent Electric</div>
-        <nav>
-            <ul>
-                <li><a href="#sobre-nosotros">Sobre Nosotros</a></li>
-                <li><a href="#como-funciona">Cómo Funciona</a></li>
-                <li><a href="#catalogo">Catálogo</a></li>
-            </ul>
-        </nav>
-        <button class="cart-btn" id="open-cart">
-            CARRITO (0) ↗
-        </button>
-    </header>
+                <!-- SECCIÓN PRINCIPAL (HERO) -->
+                <main class="hero">
+                    <div class="hero-content">
+                        <h1>Impulsa nuestro <br><span>Proyecto</span></h1>
+                        <p>Ayúdanos a llegar al circuito de Aragón financiando la fabricación de nuestra nueva moto eléctrica. Haz tu pedido, recógelo en la universidad y únete al equipo.</p>
+                        <button class="cart-btn" style="border-color: var(--upm-blue); color: var(--upm-blue);" onclick="document.getElementById('catalogo').scrollIntoView({behavior: 'smooth'})">VER MERCHANDISING ↓</button>
+                    </div>
+                    <div class="hero-image">
+                        <!-- Aquí luego pondremos una imagen real recortada -->
+                        <div class="image-placeholder">
+                            [Espacio para foto 3D de la moto o equipo]
+                        </div>
+                    </div>
+                </main>
 
-    <!-- SECCIÓN PRINCIPAL (HERO) -->
-    <main class="hero">
-        <div class="hero-content">
-            <h1>Impulsa nuestro <br><span>Proyecto</span></h1>
-            <p>Ayúdanos a llegar al circuito de Aragón financiando la fabricación de nuestra nueva moto eléctrica. Haz tu pedido, recógelo en la universidad y únete al equipo.</p>
-            <button class="cart-btn" style="border-color: var(--upm-blue); color: var(--upm-blue);" onclick="document.getElementById('catalogo').scrollIntoView({behavior: 'smooth'})">VER MERCHANDISING ↓</button>
+                <!-- SECCIÓN SOBRE NOSOTROS -->
+                <section id="sobre-nosotros">
+                    <h2 class="section-title">Quiénes Somos</h2>
+                    <p style="color: var(--text-muted); max-width: 800px; font-size: 1.1rem;">
+                        Somos un equipo de estudiantes de la Universidad Politécnica de Madrid unidos por la pasión por la ingeniería y el motociclismo. Nuestro objetivo es diseñar, fabricar y competir con un prototipo de motocicleta 100% eléctrica en la competición internacional MotoStudent. Todo lo recaudado aquí va directamente a la fabricación del chasis y baterías.
+                    </p>
+                </section>
+
+                <!-- SECCIÓN COMO FUNCIONA -->
+                <section id="como-funciona">
+                <h2 class="section-title">Cómo funciona</h2>
+                <p style="color: var(--text-muted); max-width: 800px; font-size: 1.1rem;">
+                    Aquí se incluirán las instrucciones del Crowdfunding
+                </p>
+            </section>
+
+                <!-- SECCIÓN CATÁLOGO -->
+                <section id="catalogo">
+                <h2 class="section-title" style="border-color: var(--upm-blue);">Catálogo & Packs</h2>
+                
+                <div class="catalogo-grid">
+                    <!-- 1. Camiseta -->
+                    <article class="producto-card">
+                        <div class="producto-img">[Foto Camiseta]</div>
+                        <h3>Camiseta Oficial</h3>
+                        <p class="precio">15€</p>
+                        <button class="btn-añadir">Añadir al carrito</button>
+                    </article>
+
+                    <!-- 2. Sudadera -->
+                    <article class="producto-card">
+                        <div class="producto-img">[Foto Sudadera]</div>
+                        <h3>Sudadera Racing</h3>
+                        <p class="precio">30€</p>
+                        <button class="btn-añadir">Añadir al carrito</button>
+                    </article>
+
+                    <!-- 3. Remove Before Flight -->
+                    <article class="producto-card">
+                        <div class="producto-img">[Foto Llavero]</div>
+                        <h3>Llavero "Remove Before Flight"</h3>
+                        <p class="precio">5€</p>
+                        <button class="btn-añadir">Añadir al carrito</button>
+                    </article>
+
+                    <!-- 4. Gorras -->
+                    <article class="producto-card">
+                        <div class="producto-img">[Foto Gorra]</div>
+                        <h3>Gorra Team</h3>
+                        <p class="precio">12€</p>
+                        <button class="btn-añadir">Añadir al carrito</button>
+                    </article>
+
+                    <!-- 5. Pegatinas -->
+                    <article class="producto-card">
+                        <div class="producto-img">[Foto Pegatinas]</div>
+                        <h3>Pack Pegatinas</h3>
+                        <p class="precio">3€</p>
+                        <button class="btn-añadir">Añadir al carrito</button>
+                    </article>
+
+                    <!-- 6. Parches -->
+                    <article class="producto-card">
+                        <div class="producto-img">[Foto Parche]</div>
+                        <h3>Parche Bordado</h3>
+                        <p class="precio">6€</p>
+                        <button class="btn-añadir">Añadir al carrito</button>
+                    </article>
+
+                    <!-- 7. Pulseras -->
+                    <article class="producto-card">
+                        <div class="producto-img">[Foto Pulsera]</div>
+                        <h3>Pulsera Silicona</h3>
+                        <p class="precio">2€</p>
+                        <button class="btn-añadir">Añadir al carrito</button>
+                    </article>
+
+                    <!-- 8. Mochilas de cuerdas -->
+                    <article class="producto-card">
+                        <div class="producto-img">[Foto Mochila]</div>
+                        <h3>Mochila de Cuerdas</h3>
+                        <p class="precio">8€</p>
+                        <button class="btn-añadir">Añadir al carrito</button>
+                    </article>
+
+                    <!-- 9. Bomber -->
+                    <article class="producto-card">
+                        <div class="producto-img">[Foto Bomber]</div>
+                        <h3>Chaqueta Bomber</h3>
+                        <p class="precio">50€</p>
+                        <button class="btn-añadir">Añadir al carrito</button>
+                    </article>
+
+                    <!-- 10. Pack 1 -->
+                    <article class="producto-card pack-destacado">
+                        <div class="producto-img">[Foto Pack 1]</div>
+                        <h3>Pack Básico</h3>
+                        <p class="precio">20€</p>
+                        <button class="btn-añadir">Añadir al carrito</button>
+                    </article>
+
+                    <!-- 11. Pack 2 -->
+                    <article class="producto-card pack-destacado">
+                        <div class="producto-img">[Foto Pack 2]</div>
+                        <h3>Pack Supporter</h3>
+                        <p class="precio">45€</p>
+                        <button class="btn-añadir">Añadir al carrito</button>
+                    </article>
+
+                    <!-- 12. Pack 3 -->
+                    <article class="producto-card pack-destacado">
+                        <div class="producto-img">[Foto Pack 3]</div>
+                        <h3>Pack Premium</h3>
+                        <p class="precio">75€</p>
+                        <button class="btn-añadir">Añadir al carrito</button>
+                    </article>
+                </div>
+            </section>
+
+        <!--=========================================
+            INTERFAZ DEL CARRITO LATERAL
+        ========================================= -->
+        <!-- Fondo oscuro semitransparente -->
+        <div class="cart-overlay" id="cart-overlay"></div>
+        
+        <!-- Panel lateral del carrito -->
+        <aside class="cart-sidebar" id="cart-sidebar">
+            <div class="cart-header">
+                <h2>Tu Pedido</h2>
+                <button class="close-cart" id="close-cart">&times;</button>
+            </div>
+            
+            <!-- Aquí se inyectarán los productos con JavaScript -->
+            <div class="cart-items" id="cart-items">
+                <p style="color: var(--text-muted); text-align: center; margin-top: 2rem;">El carrito está vacío</p>
+            </div>
+            
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-price">0€</span>
+            </div>
+
+            <!-- Formulario de finalización de pedido -->
+            <form class="checkout-form" id="checkout-form">
+                <h3 style="font-size: 1rem; margin-bottom: 1rem;">Datos de Recogida</h3>
+                <input type="text" id="user-name" placeholder="Nombre" required>
+                <input type="text" id="user-surnames" placeholder="Apellidos" required>
+                <input type="email" id="user-email" placeholder="Correo electrónico" required>
+                <input type="text" id="user-phone" placeholder="Teléfono" required>
+                
+                <button type="submit" class="btn-submit">Finalizar Pedido</button>
+                <p class="checkout-note">Pago en efectivo a la recogida en la universidad.</p>
+            </form>
+        </aside>
+
         </div>
-        <div class="hero-image">
-            <!-- Aquí luego pondremos una imagen real recortada -->
-            <div class="image-placeholder">
-                [Espacio para foto 3D de la moto o equipo]
+
+        <!--=========================================
+            PANTALLA DE ÉXITO (Oculta por defecto)
+            ========================================= -->
+        <div id="pantalla-exito" class="pantalla-exito">
+            <div class="exito-container">
+                <h2 style="color: var(--upm-green); font-size: 2.5rem; margin-bottom: 0.5rem;">¡Pedido Registrado!</h2>
+                <p id="success-name-msg" style="font-size: 1.2rem; margin-bottom: 3rem;">¡Gracias por tu apoyo!</p>
+                    
+                <p style="color: var(--text-muted); font-size: 1.1rem;">Tu código de pedido es:</p>
+                <h3 id="success-order-code" style="color: var(--text-light); font-size: 4rem; margin: 1rem 0; letter-spacing: 2px;">UPM-0000</h3>
+                    
+                <p style="max-width: 700px; margin: 0 auto 3rem auto; line-height: 1.6; font-size: 1.1rem;">
+                    Presenta este código en el Box de MotoStudent o en Delegación de Alumnos para pagar en efectivo y recoger tu pedido.
+                </p>
+                    
+                <button id="btn-volver" class="btn-submit" style="padding: 1rem 3rem; font-size: 1rem;">VOLVER A LA PÁGINA PRINCIPAL</button>
             </div>
         </div>
-    </main>
 
-    <!-- SECCIÓN SOBRE NOSOTROS -->
-    <section id="sobre-nosotros">
-        <h2 class="section-title">Quiénes Somos</h2>
-        <p style="color: var(--text-muted); max-width: 800px; font-size: 1.1rem;">
-            Somos un equipo de estudiantes de la Universidad Politécnica de Madrid unidos por la pasión por la ingeniería y el motociclismo. Nuestro objetivo es diseñar, fabricar y competir con un prototipo de motocicleta 100% eléctrica en la competición internacional MotoStudent. Todo lo recaudado aquí va directamente a la fabricación del chasis y baterías.
-        </p>
-    </section>
-
-    <!-- SECCIÓN COMO FUNCIONA -->
-    <section id="como-funciona">
-      <h2 class="section-title">Cómo funciona</h2>
-      <p style="color: var(--text-muted); max-width: 800px; font-size: 1.1rem;">
-          Aquí se incluirán las instrucciones del Crowdfunding
-      </p>
-  </section>
-
-    <!-- SECCIÓN CATÁLOGO -->
-    <section id="catalogo">
-      <h2 class="section-title" style="border-color: var(--upm-blue);">Catálogo & Packs</h2>
-      
-      <div class="catalogo-grid">
-          <!-- 1. Camiseta -->
-          <article class="producto-card">
-              <div class="producto-img">[Foto Camiseta]</div>
-              <h3>Camiseta Oficial</h3>
-              <p class="precio">15€</p>
-              <button class="btn-añadir">Añadir al carrito</button>
-          </article>
-
-          <!-- 2. Sudadera -->
-          <article class="producto-card">
-              <div class="producto-img">[Foto Sudadera]</div>
-              <h3>Sudadera Racing</h3>
-              <p class="precio">30€</p>
-              <button class="btn-añadir">Añadir al carrito</button>
-          </article>
-
-          <!-- 3. Remove Before Flight -->
-          <article class="producto-card">
-              <div class="producto-img">[Foto Llavero]</div>
-              <h3>Llavero "Remove Before Flight"</h3>
-              <p class="precio">5€</p>
-              <button class="btn-añadir">Añadir al carrito</button>
-          </article>
-
-          <!-- 4. Gorras -->
-          <article class="producto-card">
-              <div class="producto-img">[Foto Gorra]</div>
-              <h3>Gorra Team</h3>
-              <p class="precio">12€</p>
-              <button class="btn-añadir">Añadir al carrito</button>
-          </article>
-
-          <!-- 5. Pegatinas -->
-          <article class="producto-card">
-              <div class="producto-img">[Foto Pegatinas]</div>
-              <h3>Pack Pegatinas</h3>
-              <p class="precio">3€</p>
-              <button class="btn-añadir">Añadir al carrito</button>
-          </article>
-
-          <!-- 6. Parches -->
-          <article class="producto-card">
-              <div class="producto-img">[Foto Parche]</div>
-              <h3>Parche Bordado</h3>
-              <p class="precio">6€</p>
-              <button class="btn-añadir">Añadir al carrito</button>
-          </article>
-
-          <!-- 7. Pulseras -->
-          <article class="producto-card">
-              <div class="producto-img">[Foto Pulsera]</div>
-              <h3>Pulsera Silicona</h3>
-              <p class="precio">2€</p>
-              <button class="btn-añadir">Añadir al carrito</button>
-          </article>
-
-          <!-- 8. Mochilas de cuerdas -->
-          <article class="producto-card">
-              <div class="producto-img">[Foto Mochila]</div>
-              <h3>Mochila de Cuerdas</h3>
-              <p class="precio">8€</p>
-              <button class="btn-añadir">Añadir al carrito</button>
-          </article>
-
-          <!-- 9. Bomber -->
-          <article class="producto-card">
-              <div class="producto-img">[Foto Bomber]</div>
-              <h3>Chaqueta Bomber</h3>
-              <p class="precio">50€</p>
-              <button class="btn-añadir">Añadir al carrito</button>
-          </article>
-
-          <!-- 10. Pack 1 -->
-          <article class="producto-card pack-destacado">
-              <div class="producto-img">[Foto Pack 1]</div>
-              <h3>Pack Básico</h3>
-              <p class="precio">20€</p>
-              <button class="btn-añadir">Añadir al carrito</button>
-          </article>
-
-          <!-- 11. Pack 2 -->
-          <article class="producto-card pack-destacado">
-              <div class="producto-img">[Foto Pack 2]</div>
-              <h3>Pack Supporter</h3>
-              <p class="precio">45€</p>
-              <button class="btn-añadir">Añadir al carrito</button>
-          </article>
-
-          <!-- 12. Pack 3 -->
-          <article class="producto-card pack-destacado">
-              <div class="producto-img">[Foto Pack 3]</div>
-              <h3>Pack Premium</h3>
-              <p class="precio">75€</p>
-              <button class="btn-añadir">Añadir al carrito</button>
-          </article>
-      </div>
-  </section>
-
-  <!-- =========================================
-         PANTALLA DE ÉXITO (Oculta por defecto)
-         ========================================= -->
-         <div class="success-modal" id="success-modal">
-          <div class="success-content">
-              <h2>¡Pedido Registrado!</h2>
-              <p id="success-name-msg" style="margin-bottom: 1rem;"></p>
-              
-              <div class="order-code-box">
-                  <span style="font-size: 0.9rem; color: var(--text-muted);">Tu código de pedido es:</span>
-                  <h3 id="success-order-code">UPM-0000</h3>
-              </div>
-              
-              <p class="success-instructions">Presenta este código en el Box de MotoStudent o en Delegación de Alumnos para pagar en efectivo y recoger tu pedido.</p>
-              
-              <button class="btn-submit" id="btn-volver" style="width: 100%;">Volver a la página principal</button>
-          </div>
-      </div>
-
-  <!--=========================================
-         INTERFAZ DEL CARRITO LATERAL
-      ========================================= -->
-    <!-- Fondo oscuro semitransparente -->
-    <div class="cart-overlay" id="cart-overlay"></div>
-    
-    <!-- Panel lateral del carrito -->
-    <aside class="cart-sidebar" id="cart-sidebar">
-        <div class="cart-header">
-            <h2>Tu Pedido</h2>
-            <button class="close-cart" id="close-cart">&times;</button>
-        </div>
-        
-        <!-- Aquí se inyectarán los productos con JavaScript -->
-        <div class="cart-items" id="cart-items">
-            <p style="color: var(--text-muted); text-align: center; margin-top: 2rem;">El carrito está vacío</p>
-        </div>
-        
-        <div class="cart-total">
-            <span>Total:</span>
-            <span id="cart-total-price">0€</span>
-        </div>
-
-        <!-- Formulario de finalización de pedido -->
-        <form class="checkout-form" id="checkout-form">
-            <h3 style="font-size: 1rem; margin-bottom: 1rem;">Datos de Recogida</h3>
-            <input type="text" id="user-name" placeholder="Nombre completo" required>
-            <input type="email" id="user-email" placeholder="Correo electrónico" required>
-            <input type="text" id="user-phone" placeholder="Teléfono o Matrícula UPM" required>
-            
-            <button type="submit" class="btn-submit">Generar Código de Pedido</button>
-            <p class="checkout-note">Pago en efectivo a la recogida en la universidad.</p>
-        </form>
-    </aside>
-    
-
-    <!-- Script principal -->
-    <script src="script.js"></script>
-</body>
+        <!-- Script principal -->
+        <script src="script.js"></script>
+    </body>
 </html>
