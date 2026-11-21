@@ -40,13 +40,14 @@
                 <main class="hero">
                     <div class="hero-content">
                         <h1>Impulsa nuestro <br><span>Proyecto</span></h1>
-                        <p>Ayúdanos a llegar al circuito de Aragón financiando la fabricación de nuestra nueva moto eléctrica. Haz tu pedido, recógelo en la universidad y únete al equipo.</p>
-                        <button class="cart-btn" style="border-color: var(--upm-blue); color: var(--upm-blue);" onclick="document.getElementById('catalogo').scrollIntoView({behavior: 'smooth'})">VER MERCHANDISING ↓</button>
+                        <p style="color: var(--text-muted); max-width: 800px; font-size: 1.1rem;"style="color: var(--text-muted); max-width: 800px; font-size: 1.1rem;">
+                            De la UPM al circuito de MotorLand Aragón. Apoya la fabricación de nuestra próxima moto eléctrica llevándote el merchandising oficial del equipo. Haz tu pedido online, recógelo en tu escuela y acompáñanos a por el próximo podio.</p>
+                            <button class="cart-btn" style="background-color: var(--upm-blue); border-color: var(--upm-blue); color: #ffffff;" onclick="document.getElementById('catalogo').scrollIntoView({behavior: 'smooth'})">VER MERCHANDISING ↓</button>
                     </div>
                     <div class="hero-image">
                         <!-- Aquí luego pondremos una imagen real recortada -->
                         <div class="image-placeholder">
-                            [Espacio para foto 3D de la moto o equipo]
+                            <img src="images/Motorcycle winning image.jpg" alt="Winning Motorcycle">
                         </div>
                     </div>
                 </main>
@@ -55,27 +56,47 @@
                 <section id="sobre-nosotros">
                     <h2 class="section-title">Quiénes Somos</h2>
                     <p style="color: var(--text-muted); max-width: 800px; font-size: 1.1rem;">
-                        Somos un equipo de estudiantes de la Universidad Politécnica de Madrid unidos por la pasión por la ingeniería y el motociclismo. Nuestro objetivo es diseñar, fabricar y competir con un prototipo de motocicleta 100% eléctrica en la competición internacional MotoStudent. Todo lo recaudado aquí va directamente a la fabricación del chasis y baterías.
+                        Somos UPM MotoStudent Electric, un equipo de competición multidisciplinar formado por más de 50 estudiantes de distintas 
+                        ramas de ingeniería de la Universidad Politécnica de Madrid. 
+                        <br><br>
+                        Desde 2014 diseñamos, desarrollamos y fabricamos desde cero prototipos de motocicletas 100% eléctricas para representar a 
+                        nuestra universidad en la Competición Internacional MotoStudent, celebrada cada dos años en el circuito de MotorLand Aragón.   
+                        <br><br>
+                        Nuestra trayectoria nos avala como el mejor equipo histórico de la competición, acumulando 10 años consecutivos sin bajar del 
+                        podio. En la edición de 2025 nos proclamamos Campeones del Mundo en la fase MS2 frente a 56 equipos de 21 países, logrando el 
+                        primer puesto en la carrera oficial, la vuelta más rápida al circuito y el récord de velocidad punta de la competición con 227 km/h.   
+                        <br><br>
+                        Nuestra meta sigue siendo la misma: <strong>construir la moto más rápida de la parrilla</strong>. Para lograrlo, nos enfrentamos a los grandes desafíos 
+                        del vehículo eléctrico —peso, autonomía, refrigeración y aerodinámica— combinando diseño 3D, simulaciones avanzadas y fabricación propia 
+                        en aluminio y fibra de carbono.
                     </p>
                 </section>
 
                 <!-- SECCIÓN COMO FUNCIONA -->
                 <section id="como-funciona">
                 <h2 class="section-title">Cómo funciona</h2>
-                <p style="color: var(--text-muted); max-width: 800px; font-size: 1.1rem;">
-                    Aquí se incluirán las instrucciones del Crowdfunding
+                <p style="color: var(--text-muted); max-width: 800px; font-size: 1.1rem; text-align: justify;">
+                    <strong>1. Haz tu pedido en la web</strong><br>
+                        Explora el catálogo, elige tus prendas o packs (seleccionando color y talla) y completa tus datos en el carrito. Al finalizar, la web te generará un código de pedido único (por ejemplo, UPM-000). Guárdalo bien, ya que lo necesitarás para identificar tu compra.
+                        <br><br>
+                    <strong>2. Realiza el pago para confirmar</strong><br>
+                        Tu pedido no quedará formalizado hasta que se realice el pago. Este se efectuará en efectivo presentando tu código de pedido en los puntos habilitados en las distintas escuelas de la Universidad Politécnica de Madrid (ETSIDI, ETSISI, ETSII, entre otras).
+                        <br><br>Nota: Como caso excepcional (si no puedes desplazarte a la universidad), podrás solicitar el pago por Bizum poniéndote en contacto directamente con el equipo.
+                        <br><br>
+                    <strong>3. Confirmación y recogida</strong><br>
+                        Una vez verificado el pago, tu pedido quedará oficialmente confirmado y entrará en producción. En cuanto recibamos el material, nos pondremos en contacto contigo por correo o teléfono para avisarte de cuándo y dónde puedes pasar a recogerlo.
                 </p>
             </section>
 
                 <!-- SECCIÓN CATÁLOGO -->
-                <section id="catalogo">
+            <section id="catalogo">
                 <h2 class="section-title" style="border-color: var(--upm-blue);">Catálogo & Packs</h2>
                 
                 <div class="catalogo-grid">
                     <!-- 1. Camiseta -->
-                    <article class="producto-card" data-description="Camiseta oficial de algodón del equipo MotoStudent UPM Electric con el logo en el pecho y diseño racing en la espalda.">
+                    <article class="producto-card" data-id="camiseta">
                         <div class="producto-img">
-                            <img src="images/Camiseta algodón.jpeg" alt="Camiseta oficial">
+                            <img src="images/camisetas/mix-camisetas.jpg" alt="Camiseta oficial">
                         </div>
                         <h3>Camiseta Oficial</h3>
                         <p class="precio">15€</p>
@@ -83,9 +104,9 @@
                     </article>
 
                     <!-- 2. Sudadera -->
-                    <article class="producto-card" data-description="Sudadera con capucha y bolsillo canguro. Tejido grueso de alta calidad con el diseño oficial de la temporada.">
+                    <article class="producto-card" data-id="sudadera">
                         <div class="producto-img">
-                            <img src="images/SUDADERA BLANCA.png" alt="Sudadera">
+                            <img src="images/sudaderas/mix-sudaderas.jpg" alt="Sudadera">
                         </div>
                         <h3>Sudadera Racing</h3>
                         <p class="precio">30€</p>
@@ -93,7 +114,7 @@
                     </article>
 
                     <!-- 3. Remove Before Flight -->
-                    <article class="producto-card" data-description="Llavero bordado de doble cara estilo aviación/competición con el lema Remove Before Flight y el logo de MotoStudent UPM.">
+                    <article class="producto-card" data-id="llavero">
                         <div class="producto-img">[Foto Llavero]</div>
                         <h3>Llavero "Remove Before Flight"</h3>
                         <p class="precio">5€</p>
@@ -101,7 +122,7 @@
                     </article>
 
                     <!-- 4. Gorras -->
-                    <article class="producto-card" data-description="Gorra ajustable negra con el emblema del equipo bordado en el frontal.">
+                    <article class="producto-card" data-id="gorra">
                         <div class="producto-img">[Foto Gorra]</div>
                         <h3>Gorra Team</h3>
                         <p class="precio">12€</p>
@@ -109,15 +130,17 @@
                     </article>
 
                     <!-- 5. Pegatinas -->
-                    <article class="producto-card" data-description="Pack de pegatinas de vinilo resistente al agua para portátil, casco o carpeta.">
-                        <div class="producto-img">[Foto Pegatinas]</div>
+                    <article class="producto-card" data-id="pegatinas">
+                        <div class="producto-img">
+                            <img src="images/pegatinas/pack-pegatinas.jpg" alt="pegatinas">
+                        </div>
                         <h3>Pack Pegatinas</h3>
                         <p class="precio">3€</p>
                         <button class="btn-añadir">Añadir al carrito</button>
                     </article>
 
                     <!-- 6. Parches -->
-                    <article class="producto-card" data-description="Parche bordado termoadhesivo oficial del equipo, ideal para chaquetas o mochilas.">
+                    <article class="producto-card" data-id="parche">
                         <div class="producto-img">[Foto Parche]</div>
                         <h3>Parche Bordado</h3>
                         <p class="precio">6€</p>
@@ -125,7 +148,7 @@
                     </article>
 
                     <!-- 7. Pulseras -->
-                    <article class="producto-card" data-description="Pulsera de silicona con los colores del equipo MotoStudent UPM Electric.">
+                    <article class="producto-card" data-id="pulsera">
                         <div class="producto-img">[Foto Pulsera]</div>
                         <h3>Pulsera Silicona</h3>
                         <p class="precio">2€</p>
@@ -133,7 +156,7 @@
                     </article>
 
                     <!-- 8. Mochilas de cuerdas -->
-                    <article class="producto-card" data-description="Mochila ligera de cuerdas con serigrafía oficial del equipo, perfecta para el día a día en la universidad.">
+                    <article class="producto-card" data-id="mochila">
                         <div class="producto-img">[Foto Mochila]</div>
                         <h3>Mochila de Cuerdas</h3>
                         <p class="precio">8€</p>
@@ -141,7 +164,7 @@
                     </article>
 
                     <!-- 9. Bomber -->
-                    <article class="producto-card" data-description="Chaqueta estilo bomber oficial del equipo. Cortavientos, forro interior ligero y logo bordado.">
+                    <article class="producto-card" data-id="bomber">
                         <div class="producto-img">[Foto Bomber]</div>
                         <h3>Chaqueta Bomber</h3>
                         <p class="precio">50€</p>
@@ -149,7 +172,7 @@
                     </article>
 
                     <!-- 10. Pack 1 -->
-                    <article class="producto-card pack-destacado" data-description="Incluye: Camiseta Oficial + Llavero Remove Before Flight + Pack de Pegatinas.">
+                    <article class="producto-card pack-destacado" data-id="pack-Sbasico">
                         <div class="producto-img">[Foto Pack 1]</div>
                         <h3>Pack Básico</h3>
                         <p class="precio">20€</p>
@@ -157,7 +180,7 @@
                     </article>
 
                     <!-- 11. Pack 2 -->
-                    <article class="producto-card pack-destacado" data-description="Incluye: Sudadera Racing + Camiseta Oficial + Pulsera de Silicona + Pack de Pegatinas.">
+                    <article class="producto-card pack-destacado" data-id="pack-supporter">
                         <div class="producto-img">[Foto Pack 2]</div>
                         <h3>Pack Supporter</h3>
                         <p class="precio">45€</p>
@@ -165,7 +188,7 @@
                     </article>
 
                     <!-- 12. Pack 3 -->
-                    <article class="producto-card pack-destacado" data-description="El pack definitivo: Chaqueta Bomber + Sudadera Racing + Gorra Team + Llavero + Pack de Pegatinas.">
+                    <article class="producto-card pack-destacado" data-id="pack-premium">
                         <div class="producto-img">[Foto Pack 3]</div>
                         <h3>Pack Premium</h3>
                         <p class="precio">75€</p>
@@ -213,22 +236,44 @@
         </div>
         
         <!--=========================================
-            MODAL DE DETALLE DE PRODUCTO
+            PANTALLA DE DETALLE DE PRODUCTO
             ========================================= -->
-            <div id="product-modal-overlay" class="product-modal-overlay">
-                <div class="product-modal">
-                    <button id="close-product-modal" class="modal-close" aria-label="Cerrar">&times;</button>
-                    
-                    <div class="modal-body">
-                        <div class="modal-img-container">
-                            <img id="modal-img" src="" alt="Producto MotoStudent UPM">
+            <div id="product-detail-view" class="product-detail-view">
+                <div class="detail-container">
+                    <button id="close-detail-btn" class="btn-back">← Volver al catálogo</button>
+    
+                    <div class="detail-grid">
+                        <!-- Galería de imágenes -->
+                        <div class="detail-gallery">
+                            <div class="detail-main-img-box">
+                                <img id="detail-main-img" src="" alt="Producto MotoStudent UPM">
+                            </div>
+                            <div id="detail-thumbs" class="detail-thumbs">
+                                <!-- Miniaturas generadas con JS -->
+                            </div>
                         </div>
-                        
-                        <div class="modal-info">
-                            <h3 id="modal-title">Nombre del producto</h3>
-                            <p id="modal-price" class="modal-price">0€</p>
-                            <p id="modal-desc" class="modal-desc">Descripción del producto...</p>
-                            <button id="modal-add-btn" class="btn-añadir modal-add-btn">Añadir al carrito</button>
+    
+                        <!-- Información y selectores -->
+                        <div class="detail-info">
+                            <h2 id="detail-title">Nombre del producto</h2>
+                            <p id="detail-price" class="detail-price">0€</p>
+                            <p id="detail-desc" class="detail-desc"></p>
+    
+                            <!-- Selector de Color -->
+                            <div id="color-selector-group" class="variant-group" style="display: none;">
+                                <label>Color: <span id="selected-color-label"></span></label>
+                                <div id="color-options" class="variant-options"></div>
+                            </div>
+    
+                            <!-- Selector de Talla -->
+                            <div id="size-selector-group" class="variant-group" style="display: none;">
+                                <label>Talla: <span id="selected-size-label"></span></label>
+                                <div id="size-options" class="variant-options"></div>
+                            </div>
+    
+                            <p id="variant-error" class="variant-error"></p>
+    
+                            <button id="detail-add-btn" class="btn-añadir detail-add-btn">Añadir al carrito</button>
                         </div>
                     </div>
                 </div>
