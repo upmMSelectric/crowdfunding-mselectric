@@ -408,9 +408,14 @@ section {
 .producto-img img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
   background-color: #ffffff;
+}
+
+.producto-card[data-id="pegatinas"] .producto-img img {
+  object-fit: cover;
+  background-color: transparent;
 }
 
 .producto-card h3 {
@@ -606,7 +611,7 @@ nav ul {
   .detail-main-img-box img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     object-position: center;
     display: block;
   }

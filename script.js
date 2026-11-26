@@ -218,48 +218,29 @@ const PRODUCTS_DATA = {
     camiseta: {
         description: 'Camiseta oficial de algodón del equipo MotoStudent UPM Electric con el logo en el pecho y diseño racing en la espalda.',
         images: [
-            'images/camisetas/camiseta-azul.jpeg',
-            'images/camisetas/camiseta-negra.jpg',
-            'images/camisetas/camiseta-blanca.jpg', 
-            'images/camisetas/camiseta-verde.jpg'
+            'images/camisetas/camiseta-azul.jpg'
         ],
-        colors: [
-            { name: 'Azul', imgIndex: 0 },
-            { name: 'Negra', imgIndex: 1 },
-            { name: 'Blanca', imgIndex: 2 },
-            { name: 'Verde', imgIndex: 3 }
-        ],
+        colors: [],
         sizes: ['S', 'M', 'L', 'XL']
     },
     sudadera: {
         description: 'Sudadera con capucha y bolsillo canguro. Tejido grueso de alta calidad con el diseño oficial de la temporada.',
         images: [
-            'images/sudaderas/sudadera-blanca.png',  // índice 0
-            'images/sudaderas/sudadera-azul.png',    // índice 1
-            'images/sudaderas/sudadera-negra.jpg',   // índice 2
-            'images/sudaderas/sudadera-verde.jpg'    // índice 3 (cambia el nombre por el de tu 4º color)
+            'images/sudaderas/sudadera-blanca.png'
         ],
-        colors: [
-            { name: 'Blanca', imgIndex: 0 },
-            { name: 'Azul', imgIndex: 1 },
-            { name: 'Negra', imgIndex: 2 },
-            { name: 'Verde', imgIndex: 3 }
-        ],
-        sizes: ['S', 'M', 'L', 'XL']
-    },
-    bomber: {
-        description: 'Chaqueta estilo bomber oficial del equipo. Cortavientos, forro interior ligero y logo bordado.',
-        images: ['images/bomber.jpg'],
         colors: [],
         sizes: ['S', 'M', 'L', 'XL']
     },
+    gorro_pescador: {
+        description: 'Gorro de pescador con el número de nuestro piloto.',
+        images: ['images/gorro pescador.png'],
+        colors: [],
+        sizes: []
+    },
     gorra: {
-        description: 'Gorra ajustable con el emblema del equipo bordado en el frontal.',
-        images: ['images/gorra-negra.jpg', 'images/gorra-azul.jpg'],
-        colors: [
-            { name: 'Negra', imgIndex: 0 },
-            { name: 'Azul', imgIndex: 1 }
-        ],
+        description: 'Gorra ajustable con número de nuestri piloto bordado en el frontal.',
+        images: ['images/gorra.jpg'],
+        colors: [],
         sizes: []
     },
     llavero: {
